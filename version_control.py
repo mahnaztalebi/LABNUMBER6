@@ -17,7 +17,10 @@ def main():
     def decode(encoded_pass):
         decoded_pass = ""
         for number in encoded_pass:
-            new_digit = str(int(number) - 3)
+            if int(number) <= 2:
+                new_digit = str(int(number) + 7)
+            else:
+                new_digit = str(int(number) - 3)
             decoded_pass += new_digit
         print(f"The encoded password is {encoded_pass}, and the decoded password is {decoded_pass}.")
 
