@@ -14,18 +14,25 @@ def main():
             encoded_pass += new_digit
         return encoded_pass
 
+    def decode(encoded_pass):
+        decoded_pass = ""
+        for number in encoded_pass:
+            new_digit = str(int(number) - 3)
+            decoded_pass += new_digit
+        print(f"The encoded password is {encoded_pass}, and the decoded password is {decoded_pass}.")
+
     while True:
         menu()
         option = input("Please enter an option: ")
 
         if option == "1":
             pass_to_encode = input("Please enter your password to encode: ")
-            encode()
+            encoded_pass = encode()
             print("Your password has been encoded and stored!\n")
             continue
 
         elif option == "2":
-            pass
+            decode(encoded_pass)
 
         elif option == "3":
             break
